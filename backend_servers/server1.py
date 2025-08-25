@@ -2,7 +2,7 @@ import socket
 import time
 
 HOST = '127.0.0.1'
-PORT = 5001  # for server1
+PORT = 5001  
 
 def start_server():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -17,7 +17,7 @@ def start_server():
                 data = conn.recv(1024)
                 if not data:
                     continue
-                time.sleep(2)  # simulate processing delay
+                time.sleep(2)  
                 response = b"HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\nHello from Server1\n"
                 conn.sendall(response)
 
